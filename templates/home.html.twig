@@ -1,0 +1,46 @@
+
+{% extends "base.html.twig" %}
+
+{% block title %}
+Acceuil
+{% endblock %}
+{% block body %}
+   
+  <section class="showcase">
+    <header>
+      <img class="logo" src="{{ asset('store/img/LOGO_SP_BLANC.svg') }}"></img>
+      <div class="toggle"></div>
+    </header>
+    <video src="{{ asset('store/video/homePage.mp4') }}" muted loop autoplay></video>
+    <div class="overlay"></div>
+    <div class="text">
+      <h2>Be the source of change</h2> 
+      <h3>With your new community.</h3>
+      <p>Social Planet aims to bring together every individual who would like to invest or create in the common good</p>
+      <a href="#">Project</a>
+      <br>
+      <a href="#">Create your project</a>
+    </div>
+    <ul class="social">
+      <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+      <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+      <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+    </ul>
+  </section>
+  <div class="menu">
+    <ul>
+      <li><a href="#">News</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+    
+{% endblock %}
+{% block javascripts %}
+<script src="{{ asset('js/home.js') }}"></script> 
+{% endblock %}
+
+
+    
+
+   
