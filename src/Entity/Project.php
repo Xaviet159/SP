@@ -35,7 +35,7 @@ class Project
     /**
      * @ORM\Column(type="boolean")
      */
-    private $isValid;
+    private $isValid = false;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -60,7 +60,7 @@ class Project
     /**
      * @ORM\Column(type="boolean")
      */
-    private $proposalContributor;
+    private $proposalContributor = false;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
