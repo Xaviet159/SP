@@ -17,11 +17,26 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ProjectController extends AbstractController
 {
     /**
-     * @Route("/project", name="project")
+     * @Route("/project", name="projects")
      */
-    public function index(): Response
+    public function index(ProjectRepository $projectRepository): Response
     {
+        $projects = $projectRepository->findAll();
         return $this->render('project/index.html.twig', [
+            'projects' => $projects    
+        ]);
+    }
+
+    /**
+     * @Route("/project/{id}/show", name="project_show")
+     */
+    public function show($id, ProjectRepository $projectRepository)
+    {
+        $project = $projectRepository->find($id);
+
+        return $this->render('project/show.html.twig', [
+            'id' => $id,
+            'project' => $project
             
         ]);
     }
@@ -64,10 +79,11 @@ class ProjectController extends AbstractController
 
         if($form->isSubmitted()){
             $em->flush();
+            
         }
         $formView = $form->createView();
 
-        return $this->render('project/edit.html.twig', [
+        return $this->render('admin/edit.html.twig', [
             'project' => $project,
             'formView' => $formView
         ]);

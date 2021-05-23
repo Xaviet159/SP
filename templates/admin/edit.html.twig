@@ -1,13 +1,12 @@
-{% extends "base.html.twig" %}
-
+{% extends "baseAdmin.html.twig" %}
 
 {% block title %}
-    Création d'un projet
+Modification d'un project
 {% endblock %}
 
 {% block body %}
     <div class="container">
-        <h1>Nouveau projet</h1>
+        <h1>Modification du projet {{ project.name }}</h1>
 
         {{ form_start(formView) }}
         {{ form_widget(formView) }}
