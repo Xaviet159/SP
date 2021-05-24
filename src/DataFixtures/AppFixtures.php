@@ -2,9 +2,6 @@
 
 namespace App\DataFixtures;
 
-
-
-use Faker\Factory;
 use App\Entity\User;
 use Doctrine\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -25,9 +22,7 @@ class AppFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $faker = Factory::create('fr_FR');
 
-        
         $admin = new User;
 
         $hash = $this->encoder->encodePassword($admin, "password");
@@ -38,15 +33,14 @@ class AppFixtures extends Fixture
             ->setRoles(['ROLE_ADMIN']);
             $manager->persist($admin);
         
-        for($u = 0; $u < 100; $u++){
+        for($u = 0; $u < 10; $u++){
             $user = new User();
             $hash = $this->encoder->encodePassword($user, "password");
             $user->setEmail("user$u@gmail.com")
-                ->setFullName($faker->name())
+                ->setFullName("user$u")
                 ->setPassword($hash);
 
             $manager->persist($user);
-    
         }
 
         $manager->flush();
