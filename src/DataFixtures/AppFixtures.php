@@ -11,12 +11,10 @@ use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 class AppFixtures extends Fixture
 {
 
-    protected $slugger;
     protected $encoder;
 
-    public function __construct(SluggerInterface $slugger, UserPasswordEncoderInterface $encoder)
+    public function __construct(UserPasswordEncoderInterface $encoder)
     {
-        $this->slugger = $slugger;
         $this->encoder = $encoder;
     }
 

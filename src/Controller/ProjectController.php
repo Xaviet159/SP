@@ -49,7 +49,7 @@ class ProjectController extends AbstractController
         $user = $this->getUser();
         $project = new Project;
     
-        $form = $this->createForm(ProjectType::class);
+        $form = $this->createForm(ProjectType::class, $project);
 
             $form->handleRequest($request);
 
@@ -58,6 +58,8 @@ class ProjectController extends AbstractController
 
                 $em->persist($project);
                 $em->flush();    
+
+                return $this->redirectToRoute('projects');
             }
 
             $formView = $form->createView();
