@@ -3,15 +3,20 @@
 {% block title %}Connexion{% endblock %}
 
 {% block body %}
-<h1>Connexion</h1>
-{% if error %}
-    <div class="alert alert-danger">
-    {{ error.message }}
-    </div>
-{% endif %}
+<div class="container center mt-5">
+    <div class="col-5">
+     <h1>Connexion</h1>
+        {% if error %}
+            <div class="alert alert-danger">
+            {{ error.message }}
+            </div>
+        {% endif %}
 
-{{ form_start(formView) }}
-{{ form_widget(formView) }}
-<button type="submit" class="btn btn-success">connexion</button>
-{{ form_end(formView) }}
+        {{ form_start(formView) }}
+                {{ form_widget(formView) }}
+                <button type="submit" class="btn btn-success mt-3">connexion</button>
+        {{ form_end(formView) }}   
+    </div> 
+</div>
+
 {% endblock %}

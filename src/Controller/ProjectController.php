@@ -44,7 +44,7 @@ class ProjectController extends AbstractController
     /**
      * @Route("/project/create", name="project_create")
      */
-    public function create(FormFactoryInterface $factory, Request $request, EntityManagerInterface $em, UserRepository $user)
+    public function create(Request $request, EntityManagerInterface $em, UserRepository $user)
     {
         $user = $this->getUser();
         $project = new Project;

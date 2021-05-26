@@ -225,3 +225,39 @@ header .logo
     font-size: 2em;
   }
 }
+
+/* ====================== STYLE MODAL ====================== */
+/* button {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+} */
+
+/* .btn {
+  font-size: 14px;
+  line-height: 1.4;
+  padding: 13px 20px;
+  border-radius: 4px;
+  transition: box-shadow 0.1s, top 0.1s;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.3);
+  top: 0;
+  background: #fff;
+}
+.btn:hover {
+  box-shadow: 0 3px 0 transparent;
+  top: 3px;
+}
+.btn:active {
+  background: #f2f2f2;
+}
+
+/** Modal */
+.modal-open{
+  display: block;
+}
