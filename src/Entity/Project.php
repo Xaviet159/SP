@@ -90,6 +90,11 @@ class Project
      */
     private $purchases;
 
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $targetCounter;
+
     public function __construct()
     {
         $this->purchases = new ArrayCollection();
@@ -282,6 +287,18 @@ class Project
                 $purchase->setProject(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getTargetCounter(): ?float
+    {
+        return $this->targetCounter;
+    }
+
+    public function setTargetCounter(?float $targetCounter): self
+    {
+        $this->targetCounter = $targetCounter;
 
         return $this;
     }

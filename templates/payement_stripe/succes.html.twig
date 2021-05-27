@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+{% block title %}Succes !{% endblock %}
+
+
+{% block body %}
+    <div class="container mt-5 col-6">
+        <div class="row mt-4">
+            <div class="text-center">
+                <div class="card">
+                    <i class="fas fa-check fa-2x mb-3 pt-3"></i>
+                    <div class="card-body">
+                        <h4 class="card-title"> {{ project.name }} vous remercie pour votre contribution !</h4>
+                        <p class="card-text">Un email de confirmation vous a été envoyé à {{ user.email }}</p>
+                        <a href="{{ path('projects') }}" class="btn btn-sm"> Revenir sur la page  des projets </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

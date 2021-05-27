@@ -62,7 +62,7 @@
                     showError(result.error.message);
                 } else {
                     // The payment succeeded!
-                    console.log(result);
+                    window.location.href = "{{ url('payement_stripe_succes', {'id': id}) }}";
                 }
             });
         });

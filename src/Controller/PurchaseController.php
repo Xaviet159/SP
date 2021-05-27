@@ -38,8 +38,9 @@ class PurchaseController extends AbstractController
             $em->persist($purchase);
             $em->flush();
 
-            return $this->redirectToRoute('payement_stripe'+ $purchase->getId());
-            $this->addFlash('success', "La contribution a bien été enregistrée");
+            return $this->redirectToRoute('payement_stripe_confirm', array(
+                'id'=> $purchase->getId()
+            ));
         }
         $formView = $form->createView();
         return $this->render('purchase/index.html.twig', [
