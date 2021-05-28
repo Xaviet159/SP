@@ -4,9 +4,9 @@ namespace App\Controller;
 
 use Stripe\Stripe;
 use App\Entity\Purchase;
-use App\Repository\UserRepository;
 use App\Repository\ProjectRepository;
 use App\Repository\PurchaseRepository;
+use App\Controller\Stripe\StripeService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,19 +17,14 @@ class PayementStripeController extends AbstractController
     /**
      * @Route("/payement/stripe/{id}/confirm", name="payement_stripe_confirm")
      */
-    public function payementConfirm($id, ProjectRepository $projectRepository, PurchaseRepository $purchaseRepository, EntityManagerInterface $em): Response
-    {
-        \Stripe\Stripe::setApiKey('sk_test_51ImK9sH3zEb4xb70qzfELGVC3yVazOEu7h88YgHMv3s8dAn1G4bdf8thfMYeyx6kF2wflQnV8DySuxhQ7VUWi2w000zrKUTgKW');
-        
+    public function payementConfirm($id, PurchaseRepository $purchaseRepository, StripeService $stripeService)
+    {    
         $purchase = $purchaseRepository->find($id);
 
-        if(!$purchase){
+        if(!$purchase || ($purchase && $purchase->getUser() !== $this->getuser())){
             return $this->redirectToRoute('projects');
         }else{
-           $intent = \Stripe\PaymentIntent::create([
-            'amount' => $purchase->getTotal()*100,
-            'currency' => 'eur'
-        ]); 
+            $intent = $stripeService->getPaymentintent($purchase);
         }
 
         return $this->render('payement_stripe/index.html.twig', [
@@ -55,12 +50,13 @@ class PayementStripeController extends AbstractController
             'id'=> $project->getId()
             ));
         }else{
-            $purchase->setStatus('PAID');
+            $purchase->setStatus("PAID");
             $em->persist($purchase);
             $em->flush();
         }
 
-        if($purchase->getStatus() == 'PAID'){
+        if($purchase->getStatus() == "PAID")
+        {
             $project->setContributor($project->getContributor() + 1);
             $project->setTargetCounter($project->getTargetCounter() + $purchase->getTotal());
 

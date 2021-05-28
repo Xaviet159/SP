@@ -26,6 +26,11 @@ services:
     App\Controller\:
         resource: '../src/Controller/'
         tags: ['controller.service_arguments']
+    
+    App\Controller\Stripe\StripeService:
+        arguments:
+            $secretKey: sk_test_51ImK9sH3zEb4xb70qzfELGVC3yVazOEu7h88YgHMv3s8dAn1G4bdf8thfMYeyx6kF2wflQnV8DySuxhQ7VUWi2w000zrKUTgKW
+            $publicKey: pk_test_51ImK9sH3zEb4xb70v5ctNY9xE596nHsoCfa5zY2vt8CMJCdoNjjuv3jnF76f058fmjZrlgtOnbjmzgsIB7fPIkQt00Aos3SqfH
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
