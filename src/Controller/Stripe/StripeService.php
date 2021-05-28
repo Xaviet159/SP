@@ -2,12 +2,8 @@
 
 namespace App\Controller\Stripe;
 
-use Stripe\Stripe;
+
 use App\Entity\Purchase;
-use Stripe\PaymentIntent;
-use Symfony\Component\HttpFoundation\Response;
-
-
 
 class StripeService 
 {
