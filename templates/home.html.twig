@@ -1,52 +1,43 @@
-
-{% extends "base.html.twig" %}
-
-{% block title %}
-Acceuil
-{% endblock %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+{% block title %}{% endblock %}
 {% block body %}
-   
   <section class="showcase">
     <header>
       <img class="logo" src="{{ asset('store/img/LOGO_SP_BLANC.svg') }}"></img>
       <div class="toggle">{% if app.user %}<i style="color: white" class="fas fa-2x fa-running"></i>{% else %}<i style="color: white" class="fas fa-2x fa-user-alt"></i>{% endif %}</div>
       
     </header>
-    <video src="{{ asset('store/video/homePage.mp4') }}" muted loop autoplay></video>
-    <div class="overlay"></div>
-    <div class="text">
-      <h2>Be the source of change</h2> 
-      <h3>With your new community.</h3>
-      <p>Social Planet aims to bring together every individual who would like to invest or create in the common good</p>
-      <a href="{{ path('projects') }}">Projects</a><a href="{{ path('project_create') }}">Create your project</a>
-      
-      <br>
-      <a href="#">Contact us</a>
-    </div>
-    <ul class="social">
-      <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
-      <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
-      <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
-    </ul>
+      <video src="{{ asset('store/video/homePage.mp4') }}" muted loop autoplay></video>
+      <div class="overlay"></div>
+      <div class="text">
+        <h2>Be the source of change</h2> 
+        <h3>With your new community.</h3>
+        <p>Social Planet aims to bring together every individual who would like to invest or create in the common good</p>
+        <a href="{{ path('projects') }}">Projects</a><a href="{{ path('project_create') }}">Create your project</a>
+        <br>
+        <a href="{{ path('contact') }}">Contact us</a>
+      </div>
+      <ul class="social">
+        <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
+        <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
+        <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
+      </ul>
     
   </section>
   <div class="menu">
   {% if app.user %} 
   {# Rajouter un filtre au cas où c'ets un admin #}
    <ul>
-      <li><a href="{{ path('security_logout') }}">déconnexion</a></li>
+      <li><a href="{{ path('security_logout') }}">D<br>E<br>C<br>O<br>N<br>N<br>E<br>X<br>I<br>O<br>N</a></li>
     </ul>
   {% else %}
     <ul>
-      <li><a href="{{ path('register') }}">Register</a></li>
-      <li><a href="{{ path('security_login') }}">Connexion</a></li>
+      <li><a href="{{ path('register') }}">REGISTER</a></li>
+      <li><a href="{{ path('security_login') }}">CONNEXION</a></li>
     </ul>
     {% endif %}
-  </div>
-  
-  
-  
-    
+  </div> 
 {% endblock %}
 {% block javascripts %}
 <script src="{{ asset('js/home.js') }}"></script> 

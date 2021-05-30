@@ -12,9 +12,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController {
 
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="homePage")
      */
-    public function homepage(ProjectRepository $projectRepository)
+    public function homepage()
     {
         // count([])
         // find(id)

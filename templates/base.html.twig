@@ -16,7 +16,10 @@
 
     </head>
     <body>
-        {% block body %}{% endblock %}
+    {% include "shared/_navbar.html.twig" %}
+        {% block body %}
+        
+        {% endblock %}
 
         {% block javascripts %}
        

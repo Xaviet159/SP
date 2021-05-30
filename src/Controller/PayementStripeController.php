@@ -66,7 +66,6 @@ class PayementStripeController extends AbstractController
 
             $em->persist($project);
             $em->flush();
-            dump($user, $project);
 
             $email = new TemplatedEmail();
             $email->to(new Address($user->getEmail(), $user->getFullName()))
@@ -74,15 +73,15 @@ class PayementStripeController extends AbstractController
                 ->subject("Bravo, votre contribution a bien été confirmée")
                 ->htmlTemplate("emails/purchase_success.html.twig")
                 ->context([
-                    'purchase' => $purchase,
-                    'project' => $project,
-                    'user' => $user
+                    "purchase" => $purchase,
+                    "project" => $project,
+                    "user" => $user
                 ]);
                 $mailer->send($email);
 
-            return $this->render('payement_stripe/succes.html.twig', [
-                'user' => $user,
-                'project' => $project
+            return $this->render("payement_stripe/succes.html.twig", [
+                "user" => $user,
+                "project" => $project
             ]);
         }
 

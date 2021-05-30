@@ -45,6 +45,7 @@ class PurchaseController extends AbstractController
         $formView = $form->createView();
         return $this->render('purchase/index.html.twig', [
             'formView' => $formView,
+            'project' => $project
         ]);
     }
 }

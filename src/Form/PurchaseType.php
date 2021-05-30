@@ -16,7 +16,7 @@ class PurchaseType extends AbstractType
     {
         $builder
             ->add('fullName', TextType::class, [
-                'label' => 'Nom complet',
+                'label' => 'Last name and first name',
                 'attr' => ['class' => 'form-control']
             ])
             ->add('address', TextType::class, [

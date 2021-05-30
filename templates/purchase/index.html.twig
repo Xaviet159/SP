@@ -5,6 +5,7 @@
 {% block body %}
 
     <div class="container mt-5">
+    <h2>Vous êtes sur le point d'aider {{ project.name }} à réaliser son objectif</h2>
     {% if app.user %}
             {{ form_start(formView) }}  
                 {{ form_widget(formView) }}

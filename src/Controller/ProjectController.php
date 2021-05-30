@@ -47,6 +47,9 @@ class ProjectController extends AbstractController
     public function create(Request $request, EntityManagerInterface $em, UserRepository $user)
     {
         $user = $this->getUser();
+        if(!$user){
+            return $this->redirectToRoute('security_login');
+        }
         $project = new Project;
     
         $form = $this->createForm(ProjectType::class, $project);
