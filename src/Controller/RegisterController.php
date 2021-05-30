@@ -32,7 +32,7 @@ class RegisterController extends AbstractController
                 $em->persist($user);
                 $em->flush();
 
-                return new RedirectResponse('/');
+                return new RedirectResponse('/login');
             }
 
             $formView = $form->createView();

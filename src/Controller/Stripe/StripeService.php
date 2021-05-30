@@ -12,11 +12,17 @@ class StripeService
 
     public function __construct(string $secretKey, string $publicKey)
     {
+        dd($secretKey, $publicKey);
         $this->secretKey = $secretKey;
         $this->publicKey = $publicKey;
     }
 
-    public function getPaymentintent(Purchase $purchase) 
+    public function getPublicKey(): string 
+    {
+        return $this->publicKey;
+    }
+
+    public function getPaymentIntent(Purchase $purchase) 
     {
         \Stripe\Stripe::setApiKey($this->secretKey);
 

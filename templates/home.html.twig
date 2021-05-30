@@ -9,7 +9,8 @@ Acceuil
   <section class="showcase">
     <header>
       <img class="logo" src="{{ asset('store/img/LOGO_SP_BLANC.svg') }}"></img>
-      <div class="toggle"></div>
+      <div class="toggle">{% if app.user %}<i style="color: white" class="fas fa-2x fa-running"></i>{% else %}<i style="color: white" class="fas fa-2x fa-user-alt"></i>{% endif %}</div>
+      
     </header>
     <video src="{{ asset('store/video/homePage.mp4') }}" muted loop autoplay></video>
     <div class="overlay"></div>
@@ -17,22 +18,34 @@ Acceuil
       <h2>Be the source of change</h2> 
       <h3>With your new community.</h3>
       <p>Social Planet aims to bring together every individual who would like to invest or create in the common good</p>
-      <a href="{{ path('projects') }}">Projects</a>
+      <a href="{{ path('projects') }}">Projects</a><a href="{{ path('project_create') }}">Create your project</a>
+      
       <br>
-      <a href="{{ path('project_create') }}">Create your project</a>
+      <a href="#">Contact us</a>
     </div>
     <ul class="social">
       <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
       <li><a href="#"><img src="https://i.ibb.co/Wnxq2Nq/twitter.png"></a></li>
       <li><a href="#"><img src="https://i.ibb.co/ySwtH4B/instagram.png"></a></li>
     </ul>
+    
   </section>
   <div class="menu">
-    <ul>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contact</a></li>
+  {% if app.user %} 
+  {# Rajouter un filtre au cas où c'ets un admin #}
+   <ul>
+      <li><a href="{{ path('security_logout') }}">déconnexion</a></li>
     </ul>
+  {% else %}
+    <ul>
+      <li><a href="{{ path('register') }}">Register</a></li>
+      <li><a href="{{ path('security_login') }}">Connexion</a></li>
+    </ul>
+    {% endif %}
   </div>
+  
+  
+  
     
 {% endblock %}
 {% block javascripts %}
