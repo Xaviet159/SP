@@ -5,11 +5,12 @@ Modification d'un project
 {% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="container mt-5 mb-5">
         <h1>Modification du projet {{ project.name }}</h1>
 
         {{ form_start(formView) }}
         {{ form_widget(formView) }}
+        <input type="bo">
         <button type="submit" class="btn btn-success mt-2">enoyer</button>
         {{ form_end(formView) }}
     </div>

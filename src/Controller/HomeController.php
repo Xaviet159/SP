@@ -16,12 +16,15 @@ class HomeController extends AbstractController {
      */
     public function homepage()
     {
+        $user = $this->getUser();
         // count([])
         // find(id)
         // findBy([], [])
         // finOnBy([], [])
         // findAll()
         
-        return $this->render('home.html.twig');
+        return $this->render('home.html.twig', [
+            'user' => $user
+        ]);
     }
 }

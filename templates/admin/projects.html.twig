@@ -2,27 +2,37 @@
 
 {% block body %}
   <div class="container mt-5">
-    <table class="table table-hover">
+    <table class="table table-hover mt-5">
       <thead>
         <tr>
           <th scope="col">Name</th>
-          <th scope="col">description</th>
-          <th scope="col">Objectif</th>
+          <th scope="col">Description</th>
+          <th scope="col">Objectif Demandé</th>
+          <th scope="col">Total actuelle</th>
+          <th scope="col">Téléphone</th>
           <th scope="col">Email</th>
           <th scope="col">Validation</th>
-          <th scope="col">Action</th>
+          <th scope="col">Modifier le projet</th>
         </tr>
       </thead>
       <tbody>
         {% for project in projects %}
-        <tr class="table-info">
-          <th scope="row">{{project.name}}</th>
-          <td>{{project.description}}</td>
-          <td>{{project.objectiveAmount}}</td>
-          <td>{{ project.user.email }}</td>
-          <td>{{project.isValid}}</td>
-          <td><a href="{{path('project_edit', {'id':project.id})}}" class="fas fa-edit fa-1x"></a></td>  
-        </tr>
+            <tr class="table-info">
+              <th scope="row">{{project.name}}</th>
+              <td>{{project.description}}</td>
+              <td>{{project.objectiveAmount}}</td>
+              <td>{{project.targetCounter}}({{(project.targetCounter *100 / project.objectiveAmount)|round }}%)</td>
+              <td>{{project.phoneNumber}}</td>
+              <td>{{project.user.email}}</td>
+              <td>
+                {% if project.isValid == false %}
+                  <a href="{{path('project_check_false', {'id':project.id})}}"><ion-icon name="radio-button-off-outline"></ion-icon></a>
+                {% else %}
+                  <a href="{{path('project_check_true', {'id':project.id})}}"><ion-icon name="radio-button-on-outline"></ion-icon></a>
+                {% endif %}
+              </td>
+              <td><a href="{{path('project_edit', {'id':project.id})}}" ><ion-icon name="pencil-outline"></ion-icon></a></td>  
+            </tr>
         {% endfor %}
       </tbody>
     </table>

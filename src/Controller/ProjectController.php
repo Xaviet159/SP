@@ -17,7 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ProjectController extends AbstractController
 {
     /**
-     * @Route("/project", name="projects")
+     * @Route("/projects", name="projects")
      */
     public function index(ProjectRepository $projectRepository): Response
     {
@@ -84,7 +84,7 @@ class ProjectController extends AbstractController
 
         if($form->isSubmitted()){
             $em->flush();
-            
+            return $this->redirectToRoute('admin_projects');   
         }
         $formView = $form->createView();
 
@@ -92,5 +92,18 @@ class ProjectController extends AbstractController
             'project' => $project,
             'formView' => $formView
         ]);
+    }
+    /**
+     * @Route("/admin/project/{id}/delete", name="project_delete")
+     */
+    public function delete($id, ProjectRepository $projectRepository, EntityManagerInterface $em)
+    {
+        $project = $projectRepository->find($id);
+
+        if($project){
+            $em->remove($project);
+            $em->flush();
+            return $this->redirectToRoute('admin_projects');
+        }
     }
 }

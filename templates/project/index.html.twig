@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProjectController!{% endblock %}
+{% block title %}SP - Projects{% endblock %}
 
-{% block javascripts %}
+{# {% block javascripts %}
 <script>
     const modalOpen = document.querySelectorAll('.showModal');
     const modalClose = document.querySelector('.btn-close');
     console.log(modalClose);
     const modal = document.querySelector('.modal');
-    
+
     modalOpen.addEventListener('click', () => {
             modal.classList.add('modal-open');
         });
@@ -16,29 +16,30 @@
             modal.classList.remove('modal-open');
         });
 
-</script>  
-{% endblock %}
+</script>
+{% endblock %} #}
 {% block body %}
     <div class="container mt-4">
-        <h1>Hello</h1>
+        <h1>Projects</h1>
         <div class="row mt-4">
-        {% for project in projects %}
-            <div class="col">
-                <div class="card">
-                    <img src="https://picsum.photos/180/140" class="img-fluid" alt="Image du projet">
-                    <div class="card-body">
-                        <h4 class="card-title"> {{ project.name }}</h4>
-                        <p class="card-text">{{ project.description }}</p>
-                        <a href="{{ path('project_show', {'id':project.id}) }}" class="btn btn-primary btn-sm">Details</a>
-                        <a href="{{ path('purchase', {'id':project.id}) }}" class="btn btn-sm">Je contribue く</a>
-                        
+            {% for project in projects %}
+                {% if project.isValid == true %}
+                    <div class="col">
+                        <div class="card">
+                            <img src="https://picsum.photos/180/140" class="img-fluid" alt="Image du projet">
+                            <div class="card-body">
+                                <h4 class="card-title"> {{ project.name }}</h4>
+                                <p class="card-text">{{ project.description }}</p>
+                                <a href="{{ path('project_show', {'id':project.id}) }}" class="btn btn-primary btn-sm">Details</a>
+                                <a href="{{ path('purchase', {'id':project.id}) }}" class="btn btn-sm">Je contribue く</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            
-        {% endfor %}
-        <a href="#" class="btn showModal" id="btn-modal">Je contribue く</a>
-        <div class="modal">
+                {% endif %}
+            {% endfor %}
+        </div>
+        {% endblock %}
+        {# <div class="modal">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -55,12 +56,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-        
+        </div> #}
         {# {% include "shared/_modal.html.twig" %} #}
-    </div>
-{% endblock %}
+    
+
 
 
 

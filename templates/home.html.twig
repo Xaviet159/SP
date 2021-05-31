@@ -1,11 +1,29 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
-{% block title %}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+{% endblock %}
+<style>
+.toggle
+{
+  margin-top: 25px;
+  cursor: pointer;
+}
+</style>
+
 {% block body %}
   <section class="showcase">
     <header>
       <img class="logo" src="{{ asset('store/img/LOGO_SP_BLANC.svg') }}"></img>
-      <div class="toggle">{% if app.user %}<i style="color: white" class="fas fa-2x fa-running"></i>{% else %}<i style="color: white" class="fas fa-2x fa-user-alt"></i>{% endif %}</div>
+      <div class="toggle">
+        {% if (app.user ) and (user.roles == "ROLE_ADMIN") %}
+          <i style="color: white" class="fas fa-2x fa-tools"></i><i style="color: white" class="fas fa-2x fa-running"></i>
+        {% elseif app.user %}
+          <i style="color: white" class="fas fa-2x fa-running"></i>
+        {% else %}
+          <i style="color: white" class="fas fa-2x fa-user-alt"></i>
+        {% endif %}
+      </div>
       
     </header>
       <video src="{{ asset('store/video/homePage.mp4') }}" muted loop autoplay></video>
@@ -29,7 +47,7 @@
   {% if app.user %} 
   {# Rajouter un filtre au cas où c'ets un admin #}
    <ul>
-      <li><a href="{{ path('security_logout') }}">D<br>E<br>C<br>O<br>N<br>N<br>E<br>X<br>I<br>O<br>N</a></li>
+      <li><a href="{{ path('security_logout') }}">DECONNEXION</a></li>
     </ul>
   {% else %}
     <ul>

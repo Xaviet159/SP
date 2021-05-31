@@ -5,6 +5,7 @@
          <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
          <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
          
         <title>{% block title %}Admin base{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
@@ -16,7 +17,39 @@
 
     </head>
     <body>
-        {% block body %}{% endblock %}
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{{ path('homePage') }}"><img src="../../public/store/img/LOGO_SP_ORANGE.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor03">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="{{ path('homePage') }}">Revenir au site
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('admin') }}">Acceuil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('admin_projects') }}">Projets</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ path('contact') }}">Mail</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <a href="{{path('security_logout')}}">Déconnexion</a>
+      </form>
+    </div>
+  </div>
+</nav>
+        {% block body %}
+       
+        {% endblock %}
 
         {% block javascripts %}
             {#{{ encore_entry_script_tags('app') }}#}
