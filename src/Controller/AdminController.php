@@ -26,7 +26,6 @@ class AdminController extends AbstractController
     public function list(ProjectRepository $projectRepository)
     {
         $projects = $projectRepository->findAll();
-        dump($projects);
         return $this->render('admin/projects.html.twig', [
             'projects' => $projects
         ]);
