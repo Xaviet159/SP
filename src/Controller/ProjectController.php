@@ -33,6 +33,7 @@ class ProjectController extends AbstractController
     public function show($id, ProjectRepository $projectRepository)
     {
         $project = $projectRepository->find($id);
+        
 
         return $this->render('project/show.html.twig', [
             'id' => $id,

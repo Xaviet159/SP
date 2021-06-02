@@ -7,9 +7,10 @@
     --orange: #fa9110;
     --blue: #16258d;
     --green: #6aba36;
-    --white: #f6f6f6;
+    --white: #ffffff;
     --black: #333333;
-    --shadow: 0px 1px 3px rgba(51, 51, 51, 0.17);
+    --shadow: 0px 1px 3px rgba(51, 51, 51, 0.20), 0 3px 6px rgba(0,0,0,0.23);
+    --shadow2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     --border: 5px;
 }
 *{
@@ -27,7 +28,7 @@ html, body{
 
 /* ====================== HOME PAGE ======================  */
 
-header
+#header-showcase
 {
   position: absolute;
   top: 0;
@@ -254,3 +255,141 @@ div.container-fluid img {
 .modal-open{
   display: block;
 }
+
+/* ====================== STYLE SHOW PROJECT ====================== */
+#header-content-show{
+  width: 100%;
+  background: #f6f1eb;
+  display: flex;
+  justify-content: center;
+}
+div.content-show{
+  background: var(--white);
+  margin: 3%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  width: 65%;
+}
+
+div.content-title{
+  width: 98%;
+  height: 9vh;
+  padding-top: 20px;
+  margin: 1%;
+  background: var(--white);
+  box-shadow: var(--shadow2);
+  border-radius: 4px;
+  text-align: center;
+}
+div.content-project{
+  width: auto;
+  height: 55vh;
+  display: flex;
+
+}
+div.project-illust{
+  width: 50%;
+  margin: 1%;
+
+}
+div.project-illust img{
+  width: 100%;
+  height: 100%;
+  border-radius: 4px; 
+  box-shadow: var(--shadow);  
+}
+div.project-details{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1%;
+  align-items: center;
+  width: 50%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+}
+div.project-objective-amount{
+  margin: 3%;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#ionObjectif{
+  font-size: 45px;
+  margin-top: 75px;
+  transform: rotate(-90deg);
+}
+.objective-amount{
+  display: flex;
+  margin-left: 40px;
+}
+.amount{
+  padding-left: 40px;
+}
+div.objective-count-target{
+  text-align: center;
+  padding-bottom: 35px;
+  margin-right: 38px;
+}
+.target-pourcant{
+  padding-left: 3%;
+  padding-right: 2%;
+  margin-top: 24px;
+  font-size: 15px;
+  margin-right: 3%;
+  color: 	#F8F8FF;
+  max-height: 22px;
+  border-radius: 3px;
+  background: var(--orange);
+}
+div.project-objective-other{
+  display: flex;
+  margin: 3%;
+  width: 80%;
+  height: auto;
+}
+div.project-contributor{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1%;
+  align-items: center;
+  color: black;
+  width: 50%;
+}
+div.project-endAt{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1%;
+  align-items: center;
+  color: black;
+  width: 50%;
+}
+.ion{
+  font-size: 50px;
+  margin-bottom: 15px;
+  padding-right: 15px;
+}
+
+div.project-button button{
+  border: none;
+  width: 100%;
+  margin: 1%;
+  padding: 15px 175px;
+  font-size: 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: var(--orange);
+  cursor : pointer; 
+  box-shadow: var(--shadow);
+  transition: 0.1s cubic-bezier(.17,.67,.83,.67);
+}
+div.project-button button:hover{
+  transform: translateY(-7px);
+  box-shadow: var(--shadow);
+}
+
+
