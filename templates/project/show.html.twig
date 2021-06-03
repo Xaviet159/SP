@@ -14,6 +14,7 @@
          <link rel="stylesheet" href="{{ asset('css/app.css') }}">
          <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
   {% block body %}
+  
   <header id="header-content-show">
     <div class="content-show">
       <div class="content-title">
@@ -24,9 +25,16 @@
         <div class="project-illust"><img src="https://picsum.photos/180/140" alt=""></div>
         <div class="project-details">
           <div class="project-objective-amount">
-                <ion-icon id="ionObjectif" name="battery-dead-outline"></ion-icon>
+
+                {% if  (project.targetCounter *100 / project.objectiveAmount)|round >= 100 %}
+                <ion-icon class="ion-objectif" name="battery-charging-outline"></ion-icon>
+                {% elseif (project.targetCounter *100 / project.objectiveAmount)|round >= 50 %}
+                <ion-icon class="ion-objectif" name="battery-half-outline"></ion-icon>
+                {% else %}
+                <ion-icon class="ion-objectif" name="battery-dead-outline"></ion-icon>
+                {% endif %}
                 <div>
-                    <div class="objective-count-target"><h4>Atteint:<strong>   {{ project.targetCounter }}</strong></h4></div>
+                    <div class="objective-count-target"><h4>Atteint:<strong>{{ project.targetCounter }}</strong></h4></div>
                     <span class="objective-amount">
                         <div class="target-pourcant"> <p>{{(project.targetCounter *100 / project.objectiveAmount)|round }}%</p> </div>
                         <div class="amount">sur un objectif de <strong>{{ project.objectiveAmount }}</strong></div>
@@ -48,9 +56,9 @@
                 </div>
             </div>
           </div>
-          <div class="project-button">
-            <button href="{{ path('purchase', {'id':project.id}) }}">CONTRIBUER AU PROJET <br> A partir de 1 euro </button>
-          </div> 
+
+            <a class="btn-l" href="{{ path('purchase', {'id':project.id}) }}">CONTRIBUER AU PROJET</a>
+
         </div>
       </div> 
     </div>

@@ -5,11 +5,13 @@
     --container: 80%;
     --font: "Montserrat", sans-serif;
     --orange: #fa9110;
+    --orange2: #ffab43;
+    --orange3: #fd8b00;
     --blue: #16258d;
     --green: #6aba36;
     --white: #ffffff;
     --black: #333333;
-    --shadow: 0px 1px 3px rgba(51, 51, 51, 0.20), 0 3px 6px rgba(0,0,0,0.23);
+    --shadow: 0px 1px 3px rgba(51, 51, 51, 0.10), 0 3px 6px rgba(0,0,0,0.13);
     --shadow2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     --border: 5px;
 }
@@ -20,10 +22,92 @@
 }
 html, body{
     font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
     font-size: var(--font-size);
     scroll-behavior: smooth;
     overflow-x: hidden;
+    font-weight: 400;
+}
+main{
+  min-height: 90vh;
+  padding-bottom: 5%;
+}
+a{
+  text-decoration: none;
+
+ 
+}
+
+.a-sm{
+  border: none;
+  width: auto;
+  margin-top: 1vh;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: var(--orange2);
+  cursor : pointer; 
+  box-shadow: var(--shadow);
+  transition: 0.1s cubic-bezier(.17,.67,.83,.67);
+}
+.btn-sm-w{
+  display: inline-block;
+  border: none;
+  width: auto;
+  margin-top: 1vh;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: var(--orange2);
+  background-color: var(--white);
+  cursor : pointer; 
+  transition: 0.1s cubic-bezier(.17,.67,.83,.67);
+}
+.btn-sm{
+  display: inline-block;
+  border: none;
+  width: auto;
+  margin-top: 1vh;
+  padding: 10px 15px;
+  font-size: 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: var(--white);
+  background-color: var(--orange2);
+  cursor : pointer; 
+  box-shadow: var(--shadow);
+  transition: 0.1s cubic-bezier(.17,.67,.83,.67);
+}
+.btn-l{
+  display: inline-block;
+  border: none;
+  width: auto;
+  margin-top: 1vh;
+  padding: 15px 100px;
+  font-size: 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  color: var(--white) !important;
+  background-color: var(--orange2);
+  cursor : pointer; 
+  box-shadow: var(--shadow);
+  transition: 0.1s cubic-bezier(.17,.67,.83,.67);
+}
+.btn-1,.btn-sm:hover{
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  color: var(--white);
+}
+.btn-sm-w:hover{
+  transform: translateY(-10px);
+  box-shadow: var(--shadow);
+  color: var(--orange2)
+}
+.btn-l:hover:hover{
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
 }
 
 /* ====================== HOME PAGE ======================  */
@@ -40,8 +124,7 @@ html, body{
   justify-content: space-between;
   align-items: center;
 }
-header .logo
-{
+header .logo{
   cursor: pointer;
   width: 325px;
 }
@@ -317,7 +400,7 @@ div.project-objective-amount{
   align-items: center;
   justify-content: center;
 }
-#ionObjectif{
+.ion-objectif{
   font-size: 45px;
   margin-top: 75px;
   transform: rotate(-90deg);
@@ -373,23 +456,188 @@ div.project-endAt{
   padding-right: 15px;
 }
 
-div.project-button button{
-  border: none;
+
+/* ====================== STYLE NAV-BAR ====================== */
+/* a.navbar-brand{
+ margin-top: 7px;
+ margin-left: 70px;
+}
+ul.nav-item{
+
+
+}  */
+nav{
+  background: var(--white);
+  box-shadow: var(--shadow);
+  margin-bottom: 75px;
+  position: fixed;
+  z-index: 100;
+  height: 80px;
   width: 100%;
-  margin: 1%;
-  padding: 15px 175px;
-  font-size: 20px;
-  border-radius: 5px;
+}
+.logo img{
+  width: 250px;
+  margin-top: 20px;
+  margin-left: 60px;
+}
+nav ul{
+  float: right;
+  margin-right: 100px; 
+}
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+  margin-bottom: 15px;
+}
+nav ul li a{
+  color: var(--orange);
+  font-weight: 800;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
   text-transform: uppercase;
+  text-decoration: none;
+  list-style: none;
+}
+.item-nav.active,.item-nav:hover{
+  background: var(--orange2);
   color: var(--white);
-  background-color: var(--orange);
-  cursor : pointer; 
-  box-shadow: var(--shadow);
-  transition: 0.1s cubic-bezier(.17,.67,.83,.67);
+  transition: 0.5s;
 }
-div.project-button button:hover{
-  transform: translateY(-7px);
-  box-shadow: var(--shadow);
+
+.checkbtn{
+  font-size: 30px;
+  color: var(--orange3);
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display:none;
+}
+
+@media (max-width: 952px){
+  label.logo{
+    margin-left: -30px; 
+  }
+  nav ul{
+    margin-right: 0;
+  }
+  
+  nav ul li a{
+    font-size: 16px;
+  }
+}
+@media (max-width: 858px){
+  .checkbtn{
+    display: block;
+  }
+  ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: var(--orange2);
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all 0.5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 50px;
+    line-height: 30px;
+  }
+  nav ul li a{
+    font-size: 20px;
+  }
+  a:hover,a:active{
+    background: none;
+    color: #ffffff;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
+
+/* ====================== STYLE FOOTER ====================== */
+
+footer{
+  background: var(--orange2);
+  line-height: 24px;
+  font-weight: 700;
+  color: var(--white);
+}
+footer .art{
+  background: var(--orange);
+  padding-left: 65px;
+  padding: 16px;
+  padding-top: 48px;
+  clip-path: polygon(0% 5%, 15% 0%, 100% 10%, 100% 100%, 0% 100%);
+}
+footer .content{
+  max-width: 1080px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 16px;
+}
+footer header{
+  padding-block: 16px;
+  font-size: 21px;
+}
+footer .content a{
+  display: block;
+  text-decoration: none;
+  padding-block: 12px;
+  color: var(--white);
+  opacity: 0.35;
+}
+
+footer .content a:hover{
+  opacity: 1;
+  background: transparent;
+  color: #ffffff;
+  font-size: 18px;
+}
+footer .social-footer{
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 2fr);
+  grid-gap: 10px;
+}
+footer .social-footer i{
+  font-size: 35px;
+  text-align: center;
+  width: 100%;
+}
+footer .social-footer i:hover{
+  cursor: pointer;
+  color: var(--orange2);
+}
+footer .notice{
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+footer .notice strong{
+  color: var(--orange2);
+  text-transform: uppercase;
+}
+footer .content img{
+  margin-top: 40px;
+  width: 100%;
 }
 
 
+.stripe-card{
+  width: 400px;
+  margin: 2% 0%;
+}
+#payment-form{
+  display: block;
+  width: 50%;
+  height: 20vh;
+}

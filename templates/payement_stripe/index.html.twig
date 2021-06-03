@@ -3,15 +3,17 @@
 {% block title %}Hello PayementStripeController!{% endblock %}
 
 {% block body %}
-<h1>Je contribue !</h1>
- <form id="payment-form">
-      <div id="card-element"><!--Stripe.js injects the Card Element--></div>
-      <button id="submit" class="btn btn-success">
-        <div class="spinner hidden" id="spinner"></div>
-        <span id="button-text">Confirmer</span>
-      </button>
-      <p id="card-error" role="alert"></p>
+<div class="container">
+  <h1>Je contribue !</h1>
+  <form id="payment-form">
+        <div id="card-element"><!--Stripe.js injects the Card Element--></div>
+        <button id="submit" class="btn-l">
+          <div class="spinner hidden" id="spinner"></div>
+          <span id="button-text">Confirmer</span>
+        </button>
+        <p id="card-error" role="alert"></p>
     </form>
+</div>
 {% endblock %}
 
 {% block javascripts %}

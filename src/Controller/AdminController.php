@@ -2,19 +2,25 @@
 
 namespace App\Controller;
 
+use App\Repository\UserRepository;
 use App\Repository\ProjectRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class AdminController extends AbstractController
 {
     /**
      * @Route("/admin", name="admin")
      */
-    public function index(): Response
+    public function index()
     {
+        $user = $this->getUser();
+        if(!$user){
+            return $this->redirectToRoute('security_login');
+        }
+
         return $this->render('admin/index.html.twig', [
             'controller_name' => 'AdminController',
         ]);

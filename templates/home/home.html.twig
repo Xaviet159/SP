@@ -17,11 +17,11 @@
       <img class="logo" src="{{ asset('store/img/LOGO_SP_BLANC.svg') }}"></img>
       <div class="toggle">
         {% if (app.user ) and (user.roles == "ROLE_ADMIN") %}
-          <i style="color: white" class="fas fa-1x fa-tools"></i><i style="color: white" class="fas fa-1x fa-running"></i>
+          <i style="color: white" class="fas fa-2x fa-tools"></i><i style="color: white" class="fas fa-2x fa-running"></i>
         {% elseif app.user %}
-          <i style="color: white" class="fas fa-1x fa-running"></i>
+          <i style="color: white" class="fas fa-2x fa-running"></i>
         {% else %}
-          <i style="color: white" class="fas fa-1x fa-user-alt"></i>
+          <i style="color: white" class="fas fa-2x fa-user-alt"></i>
         {% endif %}
       </div>
       
@@ -60,6 +60,7 @@
 {% block javascripts %}
 <script src="{{ asset('js/home.js') }}"></script> 
 {% endblock %}
+
 
 
     

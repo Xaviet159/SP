@@ -9,12 +9,12 @@
     {% if app.user %}
             {{ form_start(formView) }}  
                 {{ form_widget(formView) }}
-                <button type="submit" class="btn btn-success mt-2">confirmation</button>
+                <button type="submit" class="btn-l">confirmation</button>
             {{ form_end(formView) }}
             {% else %}
             <h2>Vous devez être connecté pour confirmer cette contribution</h2>
-            <a href="{{ path('security_login') }}">Connexion</a>
-            <a href="{{ path('register') }}">S'inscrir</a>
+            <a href="{{ path('security_login') }}" class="btn-sm">Connexion</a>
+            <a href="{{ path('register') }}" class="btn-sm">S'inscrir</a>
     {% endif %}
         
     </div>

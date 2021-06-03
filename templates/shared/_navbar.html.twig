@@ -1,19 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+{# <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{ path('homePage') }}"><img src="../../public/store/img/LOGO_SP_ORANGE.png" alt=""></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
+    <a class="navbar-brand" href="{{ path('homePage') }}"><img src="{{ asset('store/img/LOGO_SP_ORANGE.png') }}" alt=""></a>
     <div class="collapse navbar-collapse" id="navbarColor03">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="{{ path('homePage') }}">Home
-            <span class="visually-hidden">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ path('projects') }}">Project</a>
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link active" href="{{ path('projects') }}">Project</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="{{ path('project_create') }}">+ Create your project</a>
@@ -22,7 +13,25 @@
           <a class="nav-link" href="{{ path('contact') }}">Contact</a>
         </li>
       </ul>
-      <form class="d-flex">
+    </div>
+  </div>
+</nav> #}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+<nav>
+<input type="checkbox" id="check">
+<label for="check" class="checkbtn">
+  <i class="fas fa-bars"></i>
+</label>
+  <a class="logo" href="{{ path('homePage') }}"><img src="{{ asset('store/img/LOGO_SP_ORANGE.png') }}" alt=""></a>
+  <ul>
+    <li><a class="item-nav" href="{{ path('projects') }}">Project</a></li>
+    <li><a class="item-nav" href="{{ path('project_create') }}">+ Create your project</a></li>
+    <li><a class="item-nav" href="{{ path('contact') }}">Contact</a></li>
+  </ul>
+</nav>
+
+   {# <form class="d-flex">
         <a href="#">
                             <ion-icon name="person-circle-outline"></ion-icon>
                             <ul class="drop-down">
@@ -38,7 +47,4 @@
                                 <a href="{{path('register')}}">{% trans %}Inscription{% endtrans %}</a>
                             </li>  
                             {% endif %}
-      </form>
-    </div>
-  </div>
-</nav>
+      </form> #}

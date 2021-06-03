@@ -23,8 +23,16 @@ class HomeController extends AbstractController {
         // finOnBy([], [])
         // findAll()
         
-        return $this->render('home.html.twig', [
+        return $this->render('home/home.html.twig', [
             'user' => $user
+        ]);
+    }
+    /**
+     * @Route("/home/rgpd", name="rgpd")
+     */
+    public function rgpd()
+    {
+        return $this->render('home/rgpd.html.twig', [
         ]);
     }
 }
