@@ -5,13 +5,17 @@
 
 {% block body %}
     <div class="container mt-5">
-        <div class="row">
-            <div class="col-12">
-                <div class="row text-center">
-                    <i class="fas fa-book fa-2x mb-3"></i>
-                    <a class="btn-l text-center" style="margin-left: 450px" herf="{{ path('admin_projects') }}">Gestion des projets</a>
+        <div>
+            <section class="col-6">
+                <div class="row text-center btn-l">
+                  <i class="fas fa-book fa-2x mb-3"></i> 
+                  <a href="{{ path('admin_projects') }}">Gestion des projets</a>                
                 </div>
-            </div>
+                <div class="row text-center btn-l">
+                  <i class="fas fa-user fa-2x mb-3"></i> 
+                  <a href="{{ path('admin_users') }}">Gestion  des  users</a>                
+                </div>
+            </section>
         </div>    
     </div>  
 {% endblock %}

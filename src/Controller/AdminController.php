@@ -2,12 +2,15 @@
 
 namespace App\Controller;
 
+use App\Form\RegisterType;
 use App\Repository\UserRepository;
 use App\Repository\ProjectRepository;
+use App\Repository\PurchaseRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 
 class AdminController extends AbstractController
 {
@@ -16,14 +19,7 @@ class AdminController extends AbstractController
      */
     public function index()
     {
-        $user = $this->getUser();
-        if(!$user){
-            return $this->redirectToRoute('security_login');
-        }
-
-        return $this->render('admin/index.html.twig', [
-            'controller_name' => 'AdminController',
-        ]);
+        return $this->render('admin/index.html.twig', []);
     }
 
     /**
@@ -66,4 +62,57 @@ class AdminController extends AbstractController
           return $this->redirectToRoute('admin_projects');
         }
     }
+    /**
+     * @Route("/admin/users", name="admin_users")
+     */
+    public function usersList(UserRepository $userRepository)
+    {
+        $users = $userRepository->findAll();
+
+        return $this->render('admin/users.html.twig', [
+            'users' => $users
+        ]);
+    }
+    /**
+     * @Route("/admin/user/{id}/edit", name="admin_user_edit")
+     */
+    public function userEdit($id, UserRepository $userRepository, EntityManagerInterface $em, Request $request)
+    {
+        $user = $userRepository->find($id);
+        $form = $this->createForm(RegisterType::class, $user);
+        $form->handleRequest($request);
+
+        $formView = $form->createView();
+        if($form->isSubmitted()){
+          $em->flush();
+          return $this->redirectToRoute('admin_users');
+        }
+
+        return $this->render('admin/edit_user.html.twig', [
+            'user' => $user,
+            'formView' => $formView
+        ]);
+    }
+    /**
+     * @Route("/admin/user/{id}/delete", name="admin_user_delete")
+     */
+    public function userDelete($id, UserRepository $userRepository,PurchaseRepository $purchaseRepository, EntityManagerInterface $em)
+    {
+        // $purchase = $purchaseRepository->findby([
+        //     'user' => $id
+        // ]);
+        $user = $userRepository->find($id);
+        // if($purchase){
+        //     $em->remove($purchase);
+        //     $em->flush();
+        //     return $this->redirectToRoute('admin_users');
+        //   }
+        if($user){
+          $em->remove($user);
+          $em->flush();
+          return $this->redirectToRoute('admin_users');
+        }
+
+    }
+
 }

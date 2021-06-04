@@ -1,0 +1,17 @@
+{% extends "baseAdmin.html.twig" %}
+
+{% block title %}
+Modification d'un project
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5 mb-5">
+        <h1>Modification du projet {{ project.name }}</h1>
+
+        {{ form_start(formView) }}
+        {{ form_widget(formView) }}
+        <input type="bo">
+        <button type="submit" class="btn-sm">modifier</button>
+        {{ form_end(formView) }}
+    </div>
+{% endblock %}

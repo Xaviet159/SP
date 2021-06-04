@@ -24,8 +24,7 @@
       <div class="content-project">
         <div class="project-illust"><img src="https://picsum.photos/180/140" alt=""></div>
         <div class="project-details">
-          <div class="project-objective-amount">
-
+          <div class="project-objective-amount"> 
                 {% if  (project.targetCounter *100 / project.objectiveAmount)|round >= 100 %}
                 <ion-icon class="ion-objectif" name="battery-charging-outline"></ion-icon>
                 {% elseif (project.targetCounter *100 / project.objectiveAmount)|round >= 50 %}
@@ -57,7 +56,7 @@
             </div>
           </div>
 
-            <a class="btn-l" href="{{ path('purchase', {'id':project.id}) }}">CONTRIBUER AU PROJET</a>
+            <a class="btn-sm" href="{{ path('purchase', {'id':project.id}) }}">CONTRIBUER AU PROJET</a>
 
         </div>
       </div> 

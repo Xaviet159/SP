@@ -6,12 +6,12 @@ Modification d'un project
 
 {% block body %}
     <div class="container mt-5 mb-5">
-        <h1>Modification du projet {{ project.name }}</h1>
+        <h1>Modification de l'utilisateur {{ user.Fullname }}</h1>
 
         {{ form_start(formView) }}
         {{ form_widget(formView) }}
         <input type="bo">
-        <button type="submit" class="btn btn-success mt-2">enoyer</button>
+        <button type="submit" class="btn-sm">modifier</button>
         {{ form_end(formView) }}
     </div>
 {% endblock %}

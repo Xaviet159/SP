@@ -36,6 +36,15 @@ a{
 
  
 }
+@media screen and(max-width: 1092) {
+  div.content-project{
+    display: none;
+  }
+  #header-content-show{
+    background: red;
+  }
+
+}
 
 .a-sm{
   border: none;
@@ -83,9 +92,9 @@ a{
 .btn-l{
   display: inline-block;
   border: none;
-  width: auto;
+  width: 600px;
   margin-top: 1vh;
-  padding: 15px 100px;
+  padding: 15px 0px;
   font-size: 20px;
   border-radius: 5px;
   text-transform: uppercase;
@@ -342,7 +351,6 @@ div.container-fluid img {
 /* ====================== STYLE SHOW PROJECT ====================== */
 #header-content-show{
   width: 100%;
-  background: #f6f1eb;
   display: flex;
   justify-content: center;
 }
@@ -458,14 +466,6 @@ div.project-endAt{
 
 
 /* ====================== STYLE NAV-BAR ====================== */
-/* a.navbar-brand{
- margin-top: 7px;
- margin-left: 70px;
-}
-ul.nav-item{
-
-
-}  */
 nav{
   background: var(--white);
   box-shadow: var(--shadow);
@@ -630,8 +630,6 @@ footer .content img{
   margin-top: 40px;
   width: 100%;
 }
-
-
 .stripe-card{
   width: 400px;
   margin: 2% 0%;
