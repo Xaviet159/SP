@@ -32,7 +32,13 @@ class HomeController extends AbstractController {
      */
     public function rgpd()
     {
-        return $this->render('home/rgpd.html.twig', [
-        ]);
+        return $this->render('home/rgpd.html.twig', []);
+    }
+    /**
+     * @Route("/home/cookies", name="cookies")
+     */
+    public function cookies()
+    {
+        return $this->render('home/cookies.html.twig', []);
     }
 }
