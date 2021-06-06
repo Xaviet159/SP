@@ -5,6 +5,7 @@
          <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
          <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
          <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
          
         <title>{% block title %}Admin base{% endblock %}</title>
@@ -17,7 +18,7 @@
 
     </head>
     <body>
-      <nav>
+      <nav class="nav-content">
        <input type="checkbox" id="check">
        <label for="check" class="checkbtn">
          <i class="fas fa-bars"></i>

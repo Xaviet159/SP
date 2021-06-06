@@ -31,6 +31,9 @@ main{
   min-height: 90vh;
   padding-bottom: 5%;
 }
+* a, li, p{
+  font-size: var(--font-size) !important;
+}
 a{
   text-decoration: none;
 
@@ -527,7 +530,7 @@ div.project-endAt{
 
 
 /* ====================== STYLE NAV-BAR ====================== */
-nav{
+.nav-content{
   background: var(--white);
   box-shadow: var(--shadow);
   margin-bottom: 75px;
@@ -541,17 +544,17 @@ nav{
   margin-top: 20px;
   margin-left: 60px;
 }
-nav ul{
+.nav-content ul{
   float: right;
   margin-right: 100px; 
 }
-nav ul li{
+.nav-content ul li{
   display: inline-block;
   line-height: 80px;
   margin: 0 5px;
   margin-bottom: 15px;
 }
-nav ul li a{
+.nav-content ul li a{
   color: var(--orange);
   font-weight: 800;
   font-size: 17px;
@@ -584,11 +587,11 @@ nav ul li a{
   label.logo{
     margin-left: -30px; 
   }
-  nav ul{
+  .nav-content ul{
     margin-right: 0;
   }
   
-  nav ul li a{
+  .nav-content ul li a{
     font-size: 16px;
     color: #944700;
   }
@@ -597,7 +600,7 @@ nav ul li a{
   .checkbtn{
     display: block;
   }
-  ul{
+  .nav-content ul{
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -607,12 +610,12 @@ nav ul li a{
     text-align: center;
     transition: all 0.5s;
   }
-  nav ul li{
+  .nav-content ul li{
     display: block;
     margin: 50px;
     line-height: 30px;
   }
-  nav ul li a{
+  .nav-content ul li a{
     font-size: 20px;
   }
   a:hover,a:active{

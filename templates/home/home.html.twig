@@ -26,15 +26,15 @@
       </div>
       
     </header>
-      <video src="{{ asset('store/video/homePage.mp4') }}" muted loop autoplay></video>
+      <video src="{{ asset('store/video/homePage.mp4') }}" muted loop autoplay alt="Video d'arrière plan qui représente un projet de Social Planet"></video>
       <div class="overlay"></div>
       <div class="text">
         <h2>Be the source of change</h2> 
         <h3>With your new community.</h3>
         <p>Social Planet aims to bring together every individual who would like to invest or create in the common good</p>
-        <a href="{{ path('projects') }}">Projects</a><a href="{{ path('project_create') }}">Create your project</a>
+        <a href="{{ path('projects') }}">Projets</a><a href="{{ path('project_create') }}">Créer votre projet</a>
         <br>
-        <a href="{{ path('contact') }}">Contact us</a>
+        <a href="{{ path('contact') }}">Contacter nous</a>
       </div>
       <ul class="social">
         <li><a href="#"><img src="https://i.ibb.co/x7P24fL/facebook.png"></a></li>
@@ -55,7 +55,7 @@
     </ul>
   {% else %}
     <ul>
-      <li><a href="{{ path('register') }}">REGISTER</a></li>
+      <li><a href="{{ path('register') }}">INSCRIPTION</a></li>
       <li><a href="{{ path('security_login') }}">CONNEXION</a></li>
     </ul>
     {% endif %}
