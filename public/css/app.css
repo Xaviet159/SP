@@ -580,7 +580,7 @@ nav ul li a{
   display:none;
 }
 
-@media (max-width: 952px){
+@media (max-width: 1252px){
   label.logo{
     margin-left: -30px; 
   }
@@ -593,7 +593,7 @@ nav ul li a{
     color: #944700;
   }
 }
-@media (max-width: 858px){
+@media (max-width: 1058px){
   .checkbtn{
     display: block;
   }
