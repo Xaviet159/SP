@@ -14,7 +14,7 @@ class LoginType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                'label' => 'Adresse email',
+                'label' => 'Email',
                 'attr' => [
                     'class' =>'form-control',
                     'placeholder' => 'Adresse email de connexion'

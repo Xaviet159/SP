@@ -1,18 +1,18 @@
 {% extends "baseAdmin.html.twig" %}
 
 {% block body %}
-  <div class="container mt-5">
-    <table class="table table-hover mt-5">
+  <div style="padding-top: 5vh;" class="container-fluid">
+    <table class="table table-hover">
       <thead>
         <tr>
-          <th scope="col">Name</th>
+          <th scope="col">Nom</th>
           <th scope="col">Description</th>
           <th scope="col">Objectif Demandé</th>
           <th scope="col">Total actuelle</th>
           <th scope="col">Téléphone</th>
           <th scope="col">Email</th>
           <th scope="col">Validation</th>
-          <th scope="col">Modifier le projet</th>
+          <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -31,7 +31,13 @@
                   <a href="{{path('project_check_true', {'id':project.id})}}"><ion-icon name="radio-button-on-outline"></ion-icon></a>
                 {% endif %}
               </td>
-              <td><a href="{{path('project_edit', {'id':project.id})}}" ><ion-icon name="pencil-outline"></ion-icon></a></td>  
+              <td>
+                <a href="{{path('project_edit', {'id':project.id})}}" ><ion-icon name="pencil-outline"></ion-icon></a>
+               {% if project.targetCounter == 0 %}
+                <a href="{{path('project_delete', {'id':project.id})}}"><ion-icon name="trash-outline"></ion-icon></a>
+                {% else %}
+                {% endif %}
+              </td>
             </tr>
         {% endfor %}
       </tbody>

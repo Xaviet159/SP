@@ -7,22 +7,21 @@
   <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>    
             {#{{ encore_entry_link_tags('app') }}#}
     {# {% endblock %} #} 
-
-{# {% block title %}SP - Project details{% endblock %} #}
-         <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
-         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-         <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
-  {% block body %}
-  
+{% extends "base.html.twig" %}
+{% block meta %}
+<meta name="name" content="{{ project.name }}">
+<meta name="description" content="{{ project.description }}">
+{% endblock %}
+{% block title %}SP - Project {{ project.name }}{% endblock %}
+  {% block body %} 
   <header id="header-content-show">
     <div class="content-show">
       <div class="content-title">
-       <h3>Ici le titre de mon projret</h3>
-       <p>Description brève de mon projet</p>  
+       <h3>{{ project.name }}</h3>
+       <p>{{ project.description }}</p>  
       </div>
       <div class="content-project">
-        <div class="project-illust"><img src="https://picsum.photos/180/140" alt=""></div>
+        <div class="project-illust"><img src="https://picsum.photos/180/140" alt="Photo représentant un projet d'aide humanitaire appellé :{{ project.name }}"></div>
         <div class="project-details">
           <div class="project-objective-amount"> 
                 {% if  (project.targetCounter *100 / project.objectiveAmount)|round >= 100 %}
@@ -43,27 +42,23 @@
           <div class="project-objective-other">
             <div class="project-contributor">
                 <ion-icon class="ion" name="people-outline"></ion-icon>
-                <p> <strong>{% if project.contributor == 0 %}Aucun {% else %}{{ project.contributor }}{% endif %}</strong> <br> contributeur</p>      
+                <p> <strong>{% if project.contributor == 0 %}Aucun {% else %}{{ project.contributor }}{% endif %}</strong> <br> Contributeur</p>      
             </div>
             <div class="project-endAt">
                 <ion-icon class="ion" name="today-outline"></ion-icon>
                 <div class="numbers" id="countdown" data-time="{{ project.endAt|date("c") }}">
                     <div class="bloc">
                       <strong id="days"><em>Jours</em></strong>
-                      <p>jours restants</p>
+                      <p>Jours restants</p>
                     </div> 
                 </div>
             </div>
           </div>
-
-            <a class="btn-sm" href="{{ path('purchase', {'id':project.id}) }}">CONTRIBUER AU PROJET</a>
-
+            <a class="btn-l" style="text-align: center;" href="{{ path('purchase', {'id':project.id}) }}">CONTRIBUER AU PROJET</a>
         </div>
       </div> 
     </div>
   </header>
-
-  
     {# <div id="summernote"><p>Hello Summernote</p></div>
     <script>
         $(document).ready(function() {

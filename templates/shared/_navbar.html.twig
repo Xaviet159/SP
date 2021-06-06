@@ -25,11 +25,20 @@
 </label>
   <a class="logo" href="{{ path('homePage') }}"><img src="{{ asset('store/img/LOGO_SP_ORANGE.png') }}" alt=""></a>
   <ul>
-    <li><a class="item-nav" href="{{ path('projects') }}">Project</a></li>
-    <li><a class="item-nav" href="{{ path('project_create') }}">+ Create your project</a></li>
-    <li><a class="item-nav" href="{{ path('contact') }}">Contact</a></li>
+    <li><a class="item-nav" href="{{ path('projects') }}">Projets</a></li>
+    <li><a class="item-nav" href="{{ path('project_create') }}">+ Créer votre projet</a></li>
+    <li><a class="item-nav" href="{{ path('contact') }}">Contacter nous</a></li>
+    <li><a href="{{ path('security_login') }}"><ion-icon style="font-size: 25px;" name="person-outline"></ion-icon></a></li>
   </ul>
 </nav>
+<style>
+ nav ul ul{
+   display: none;
+ }
+ nav ul ion-icon:hover > ul{
+   display: block;
+ }
+</style>
 
    {# <form class="d-flex">
         <a href="#">

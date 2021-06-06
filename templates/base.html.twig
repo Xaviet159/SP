@@ -2,16 +2,20 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        {% block meta %}
+        
+        {% endblock %}
          <link rel="stylesheet" href="https://bootswatch.com/5/lux/bootstrap.min.css">
          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
          <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+         <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
          <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
          {% block stylesheets %}
            
             {#{{ encore_entry_link_tags('app') }}#}
         {% endblock %}
          
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Bienvenu chez Social Planet{% endblock %}</title>
         {# Run `composer require symfony/webpack-encore-bundle`
            and uncomment the following Encore helpers to start using Symfony UX #}
         

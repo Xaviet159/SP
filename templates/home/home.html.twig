@@ -14,7 +14,7 @@
 {% block body %}
   <section class="showcase">
     <header id="header-showcase">
-      <img class="logo" src="{{ asset('store/img/LOGO_SP_BLANC.svg') }}"></img>
+      <a href="{{ path('projects') }}"><img class="logo" src="{{ asset('store/img/LOGO_SP_BLANC.svg') }}" alt="logo de socialplanet.be"></img></a>
       <div class="toggle">
         {% if (app.user ) and (user.roles == "ROLE_ADMIN") %}
           <i style="color: white" class="fas fa-2x fa-tools"></i><i style="color: white" class="fas fa-2x fa-running"></i>

@@ -2,30 +2,12 @@
 
 {% block title %}SP - Projects{% endblock %}
 
-{# {% block javascripts %}
-<script>
-    const modalOpen = document.querySelectorAll('.showModal');
-    const modalClose = document.querySelector('.btn-close');
-    console.log(modalClose);
-    const modal = document.querySelector('.modal');
-
-    modalOpen.addEventListener('click', () => {
-            modal.classList.add('modal-open');
-        });
-    modalClose.addEventListener('click', () => {
-            modal.classList.remove('modal-open');
-        });
-
-</script>
-{% endblock %} #}
 {% block body %}
-    <div class="container mt-4">
-        <h1>Projects</h1>
-        <div class="row mt-4">
+    <div class="container-fluid mt-4">
+        <div class="row col-22 flex mt-4">
             {% for project in projects %}
                 {% if project.isValid == true %}
-                    <div class="col">
-                        <div class="card">
+                        <div class="card col-3 m-2 flex-content">
                             <img src="https://picsum.photos/180/140" class="img-fluid" alt="Image du projet">
                             <div class="card-body">
                                 <h4 class="card-title"> {{ project.name }}</h4>
@@ -34,7 +16,6 @@
                                 <a href="{{ path('purchase', {'id':project.id}) }}" class="btn-sm-w">Je contribue く</a>
                             </div>
                         </div>
-                    </div>
                 {% endif %}
             {% endfor %}
         </div>

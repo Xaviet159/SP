@@ -30,13 +30,9 @@ class ProjectType extends AbstractType
                 'placholder' => 'Tapez une description assez courte mais parlante pour le visiteur']
             ])
             ->add('objectiveAmount', MoneyType::class, [
-                'label' => 'Quel serait l\'objectif monetaire à atteindre' ,
+                'label' => 'Quel serait l\'objectif monétaire à atteindre' ,
                 'attr' => ['class' =>'form-control',
                 'placholder' => 'Tapez un chiffre rond en €'] 
-            ])
-            ->add('startAt', DateType::class, [
-                'label' => 'A quelle date voulez-vous lancer le crowfunding ? (Comptez entre 1 à 3 semaines pour la validation de celui-ci)',
-                'attr' => ['class' => 'form-control']
             ])
             ->add('endAt', DateType::class, [
                 'label' => 'A quelle date voulez-vous terminer le crowfunding ?',
@@ -63,8 +59,7 @@ class ProjectType extends AbstractType
             ->add('phoneNumber', NumberType::class, [
                 'label' => 'Inserez un numéro de contact',
                 'attr' => ['class' => 'form-control']
-            ]);
-        
+            ]);    
     }
 
     public function configureOptions(OptionsResolver $resolver)

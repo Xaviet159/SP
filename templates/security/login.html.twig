@@ -4,7 +4,7 @@
 
 {% block body %}
 <div class="container center mt-5">
-    <div class="col-5">
+    <div class="col-5 mx-auto">
      <h1>Connexion</h1>
         {% if error %}
             <div class="alert alert-danger">
@@ -13,11 +13,9 @@
         {% endif %}
 
         {{ form_start(formView) }}
-                {{ form_widget(formView) }}
-                
-                <button type="submit" class="btn-sm">connexion</button>
-                <button class="btn-sm" href="{{ path('register') }}">register</button>
-                
+                {{ form_widget(formView) }}      
+                <button type="submit" class="btn-sm">Connexion</button>
+                <button class="btn-sm" href="{{ path('register') }}">Inscription</button>           
         {{ form_end(formView) }}   
     </div> 
 </div>

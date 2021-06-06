@@ -20,7 +20,7 @@ class ContactType extends AbstractType
                 'attr' => ['class' => 'form-control']
             ])
             ->add('fullName', TextType::class, [
-                'label' => 'Last name and first name',
+                'label' => 'Nom complet',
                 'attr' => ['class' => 'form-control']
             ])
             ->add('description', TextareaType::class, [

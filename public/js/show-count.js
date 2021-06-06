@@ -9,10 +9,10 @@ function refreshCountdown() {
     const diff = Math.floor(difference / DAYS)
 
     // modifier L'html pour injecter
-    if(!diff == 0){
+    if(diff >= 0){
         document.getElementById('days').innerText = diff
     }else{
-        document.getElementById('days').innerText = "Aujourd'hui"
+        document.getElementById('days').innerText = "Aucun"
     }
 
     window.setTimeout(refreshCountdown, DAYS)
