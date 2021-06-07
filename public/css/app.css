@@ -1,7 +1,7 @@
 @import  url('./grid.css');
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 :root {
-    --font-size: calc(14px + (21 - 15) * ((100vw - 300px) / (1920 - 300)));
+    --font-size: calc(11px + (21 - 15) * ((100vw - 300px) / (1920 - 300)));
     --container: 80%;
     --font: "Montserrat", sans-serif;
     --orange: #fa9110;
@@ -348,6 +348,9 @@ div.container-fluid img {
   flex-wrap: wrap;
   align-content: space-around;
 }
+img.img-fluid {
+  height: 400px;
+}
 .flex-content{
   min-width: 500px;
   max-width: 650px;
@@ -443,7 +446,8 @@ div.objective-count-target{
   font-size: 15px;
   margin-right: 3%;
   color: 	#F8F8FF;
-  max-height: 22px;
+  height: 28px;
+  min-height: 26px;
   border-radius: 3px;
   background: var(--orange);
 }
@@ -496,7 +500,6 @@ div.project-endAt{
     border-radius: 4px;
     box-shadow: var(--shadow);
   }
-
 }
 @media (max-width: 450px){
   div.content-project ion-icon{
