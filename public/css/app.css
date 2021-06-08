@@ -401,21 +401,18 @@ div.content-title{
   height: 9vh;
   padding-top: 20px;
   margin: 1%;
-
   text-align: center;
 }
 div.content-project{
-
   min-height: auto;
   display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
+  flex-wrap: wrap;
+  justify-content: center;
 }
 div.project-illust{
   display: block;
   margin: 1%;
-  min-width: 510px;
+  min-width: 560px;
   min-height: 550px;
   width: 40%;
 }
@@ -430,7 +427,7 @@ div.project-details{
   display:flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 510px;
+  min-width: 560px;
   min-height: 550px;
   margin: 1%;
   align-items: center;
