@@ -1,7 +1,7 @@
 @import  url('./grid.css');
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 :root {
-    --font-size: calc(11px + (21 - 15) * ((100vw - 300px) / (1920 - 300)));
+    --font-size: calc(10px + (21 - 15) * ((100vw - 300px) / (1920 - 300)));
     --container: 80%;
     --font: "Montserrat", sans-serif;
     --orange: #fa9110;
@@ -36,8 +36,6 @@ main{
 }
 a{
   text-decoration: none;
-
- 
 }
 
 .a-sm{
@@ -391,8 +389,8 @@ div.content-project{
 div.project-illust{
   display: block;
   margin: 1%;
-  min-width: 650px;
-  min-height: 750px;
+  min-width: 510px;
+  min-height: 550px;
   width: 40%;
 }
 div.project-illust img{
@@ -406,8 +404,8 @@ div.project-details{
   display:flex;
   flex-direction: column;
   justify-content: center;
-  min-width: 650px;
-  min-height: 750px;
+  min-width: 510px;
+  min-height: 550px;
   margin: 1%;
   align-items: center;
   width: 50%;
