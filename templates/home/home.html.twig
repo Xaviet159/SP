@@ -31,7 +31,7 @@
       <div class="text">
         <h2>Be the source of change</h2> 
         <h3>With your new community.</h3>
-        <p>Social Planet aims to bring together every individual who would like to invest or create in the common good</p>
+        <p>Social Planet vise à rassembler toutes personnes désireuses qui souhaitent investir ou créer dans le bien commun.</p>
         <a href="{{ path('projects') }}">Projets</a><a href="{{ path('project_create') }}">Créer votre projet</a>
         <br>
         <a href="{{ path('contact') }}">Contacter nous</a>
@@ -59,7 +59,19 @@
       <li><a href="{{ path('security_login') }}">CONNEXION</a></li>
     </ul>
     {% endif %}
-  </div> 
+  </div>
+  twig_test_
+  {% if cookies is defined %}
+  {% else %}
+    <div class="banner">
+      <div class="text-banner">
+        <p>Notre site utilise des cookies pour une meilleur expérience</p>
+      </div>
+      <div class="button-banner">
+        <a href="{{ path('cookies_accept') }}">J'accepte</a>
+      </div>
+    </div> 
+  {% endif %}
 {% endblock %}
 {% block javascripts %}
 <script src="{{ asset('js/home.js') }}"></script> 

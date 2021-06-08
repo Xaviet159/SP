@@ -1,4 +1,4 @@
-@import  url('./grid.css');
+
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 :root {
     --font-size: calc(10px + (21 - 15) * ((100vw - 300px) / (1920 - 300)));
@@ -132,7 +132,6 @@ header .logo{
 
 .toggle.active
 {
-  /* background: url(https://i.ibb.co/rt3HybH/close.png); */
   background-repeat: no-repeat;
   background-size: 25px;
   background-position: center;
@@ -156,7 +155,6 @@ header .logo{
 {
   right: 300px;
 }
-
 .showcase video
 {
   position: absolute;
@@ -282,7 +280,35 @@ header .logo{
 {
   color: var(--orange); 
 }
-
+.banner{
+  background: var(--white);
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+  text-align: center;
+}
+.text-banner{
+  color: var(--orange3);
+  font-weight: 600;
+  font-size: 15px;
+  left: -400px;
+}
+.button-banner a{
+  text-transform: uppercase;
+  transition: cubic-bezier(.17,.67,.83,.67);
+}
+.button-banner a:hover{
+  background: var(--orange3);
+  margin-right: -28px;
+  padding: 26px;
+  color: var(--white);
+  box-shadow: var(--shadow);
+}
 @media (max-width: 991px)
 {
   .showcase,

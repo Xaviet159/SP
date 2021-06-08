@@ -8,7 +8,7 @@
             {% for project in projects %}
                 {% if project.isValid == true %}
                         <div class="card col-3 m-2 flex-content">
-                            <img src="https://picsum.photos/180/140" class="img-fluid" alt="Image du projet">
+                            <img src="{{ project.urlImage }}" class="img-fluid" alt="Image du projet">
                             <div class="card-body">
                                 <h4 class="card-title"> {{ project.name }}</h4>
                                 <p class="card-text">{{ project.description }}</p>

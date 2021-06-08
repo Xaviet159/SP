@@ -41,4 +41,17 @@ class HomeController extends AbstractController {
     {
         return $this->render('home/cookies.html.twig', []);
     }
+    /**
+     * @Route("/home/cookies/accept", name="cookies_accept")
+     */
+    public function acceptCookies()
+    {
+        $cookies_name = "accept-cookies";
+        $cookies = setcookie($cookies_name, true, time() + (60*60*24*365), "/");
+
+        return $this->render('home/home.html.twig', [
+            'cookies' => $cookies
+        ]);
+    }
+
 }

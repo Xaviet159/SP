@@ -21,7 +21,7 @@
        <p>{{ project.description }}</p>  
       </div>
       <div class="content-project">
-        <div class="project-illust"><img src="https://picsum.photos/180/140" alt="Photo représentant un projet d'aide humanitaire appellé :{{ project.name }}"></div>
+        <div class="project-illust"><img src="{{ project.urlImage }}" alt="Photo représentant un projet d'aide humanitaire appellé :{{ project.name }}"></div>
         <div class="project-details">
           <div class="project-objective-amount"> 
                 {% if  (project.targetCounter *100 / project.objectiveAmount)|round >= 100 %}
